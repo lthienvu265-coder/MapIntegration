@@ -21,16 +21,16 @@
         [HttpPost]
         public async Task<ActionResult<NodeOut>> CreateNode(NodeIn payload)
         {
-            var map = await _context.Maps.FindAsync(payload.MapId);
+            var map = await _context.Maps.FindAsync(payload.map_id);
             if (map == null)
                 return NotFound(new { detail = "Map không tồn tại." });
 
             var node = new Node
             {
-                MapId = payload.MapId,
+                MapId = payload.map_id,
                 X = payload.X,
                 Y = payload.Y,
-                IsLandmark = payload.IsLandmark,
+                IsLandmark = payload.is_landmark,
                 Floor = payload.Floor,
                 Meta = payload.Meta
             };
@@ -41,10 +41,10 @@
             return new NodeOut
             {
                 Id = node.Id,
-                MapId = node.MapId,
+                map_id = node.MapId,
                 X = node.X,
                 Y = node.Y,
-                IsLandmark = node.IsLandmark,
+                is_landmark = node.IsLandmark,
                 Floor = node.Floor,
                 Meta = node.Meta
             };
@@ -53,10 +53,10 @@
         // LIST
         [HttpGet]
         public async Task<ActionResult<List<NodeOut>>> ListNodes(
-            [FromQuery] int mapId,
+            [FromQuery] int map_id,
             [FromQuery] int? floor)
         {
-            var query = _context.Nodes.Where(n => n.MapId == mapId);
+            var query = _context.Nodes.Where(n => n.MapId == map_id);
 
             if (floor.HasValue)
                 query = query.Where(n => n.Floor == floor.Value);
@@ -66,10 +66,10 @@
             return nodes.Select(n => new NodeOut
             {
                 Id = n.Id,
-                MapId = n.MapId,
+                map_id = n.MapId,
                 X = n.X,
                 Y = n.Y,
-                IsLandmark = n.IsLandmark,
+                is_landmark = n.IsLandmark,
                 Floor = n.Floor,
                 Meta = n.Meta
             }).ToList();
@@ -86,10 +86,10 @@
             return new NodeOut
             {
                 Id = node.Id,
-                MapId = node.MapId,
+                map_id = node.MapId,
                 X = node.X,
                 Y = node.Y,
-                IsLandmark = node.IsLandmark,
+                is_landmark = node.IsLandmark,
                 Floor = node.Floor,
                 Meta = node.Meta
             };
@@ -105,7 +105,7 @@
 
             if (payload.X.HasValue) node.X = payload.X.Value;
             if (payload.Y.HasValue) node.Y = payload.Y.Value;
-            if (payload.IsLandmark.HasValue) node.IsLandmark = payload.IsLandmark.Value;
+            if (payload.is_landmark.HasValue) node.IsLandmark = payload.is_landmark.Value;
             if (payload.Floor.HasValue) node.Floor = payload.Floor.Value;
             if (payload.Meta != null) node.Meta = payload.Meta;
 
@@ -114,10 +114,10 @@
             return new NodeOut
             {
                 Id = node.Id,
-                MapId = node.MapId,
+                map_id = node.MapId,
                 X = node.X,
                 Y = node.Y,
-                IsLandmark = node.IsLandmark,
+                is_landmark = node.IsLandmark,
                 Floor = node.Floor,
                 Meta = node.Meta
             };

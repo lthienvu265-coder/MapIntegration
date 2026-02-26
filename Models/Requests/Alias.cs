@@ -2,7 +2,7 @@
 {
     public class AliasIn
     {
-        public int NodeId { get; set; }
+        public int Node_id { get; set; }
         public string Name { get; set; } = string.Empty;
         public string Lang { get; set; } = "vi";
         public double Weight { get; set; } = 1.0;
@@ -12,7 +12,7 @@
     public class AliasOut
     {
         public int Id { get; set; }
-        public int NodeId { get; set; }
+        public int Node_id { get; set; }
         public string Name { get; set; } = string.Empty;
         public string NormName { get; set; } = string.Empty;
         public string Lang { get; set; } = string.Empty;

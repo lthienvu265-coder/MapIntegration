@@ -1,0 +1,105 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\chaung\\Desktop\\New folder\\MapIntegration\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B9333169-292B-1A53-1A5D-6DD5D8B783A4}|IndoorWayfinder.Api.csproj|c:\\users\\chaung\\desktop\\new folder\\mapintegration\\controllers\\routecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9333169-292B-1A53-1A5D-6DD5D8B783A4}|IndoorWayfinder.Api.csproj|solutionrelative:controllers\\routecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9333169-292B-1A53-1A5D-6DD5D8B783A4}|IndoorWayfinder.Api.csproj|c:\\users\\chaung\\desktop\\new folder\\mapintegration\\services\\routeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9333169-292B-1A53-1A5D-6DD5D8B783A4}|IndoorWayfinder.Api.csproj|solutionrelative:services\\routeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9333169-292B-1A53-1A5D-6DD5D8B783A4}|IndoorWayfinder.Api.csproj|c:\\users\\chaung\\desktop\\new folder\\mapintegration\\utils\\geoutils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9333169-292B-1A53-1A5D-6DD5D8B783A4}|IndoorWayfinder.Api.csproj|solutionrelative:utils\\geoutils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9333169-292B-1A53-1A5D-6DD5D8B783A4}|IndoorWayfinder.Api.csproj|c:\\users\\chaung\\desktop\\new folder\\mapintegration\\models\\requests\\route.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9333169-292B-1A53-1A5D-6DD5D8B783A4}|IndoorWayfinder.Api.csproj|solutionrelative:models\\requests\\route.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9333169-292B-1A53-1A5D-6DD5D8B783A4}|IndoorWayfinder.Api.csproj|c:\\users\\chaung\\desktop\\new folder\\mapintegration\\models\\dto\\routedtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9333169-292B-1A53-1A5D-6DD5D8B783A4}|IndoorWayfinder.Api.csproj|solutionrelative:models\\dto\\routedtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GeoUtils.cs",
+              "DocumentMoniker": "C:\\Users\\chaung\\Desktop\\New folder\\MapIntegration\\Utils\\GeoUtils.cs",
+              "RelativeDocumentMoniker": "Utils\\GeoUtils.cs",
+              "ToolTip": "C:\\Users\\chaung\\Desktop\\New folder\\MapIntegration\\Utils\\GeoUtils.cs",
+              "RelativeToolTip": "Utils\\GeoUtils.cs",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAAAC4AAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T10:15:31.571Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RouteDtos.cs",
+              "DocumentMoniker": "C:\\Users\\chaung\\Desktop\\New folder\\MapIntegration\\Models\\Dto\\RouteDtos.cs",
+              "RelativeDocumentMoniker": "Models\\Dto\\RouteDtos.cs",
+              "ToolTip": "C:\\Users\\chaung\\Desktop\\New folder\\MapIntegration\\Models\\Dto\\RouteDtos.cs",
+              "RelativeToolTip": "Models\\Dto\\RouteDtos.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAqwAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T10:08:53Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RouteService.cs",
+              "DocumentMoniker": "C:\\Users\\chaung\\Desktop\\New folder\\MapIntegration\\Services\\RouteService.cs",
+              "RelativeDocumentMoniker": "Services\\RouteService.cs",
+              "ToolTip": "C:\\Users\\chaung\\Desktop\\New folder\\MapIntegration\\Services\\RouteService.cs",
+              "RelativeToolTip": "Services\\RouteService.cs",
+              "ViewState": "AgIAANAAAAAAAAAAAAAAAAABAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T10:00:48.514Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Route.cs",
+              "DocumentMoniker": "C:\\Users\\chaung\\Desktop\\New folder\\MapIntegration\\Models\\Requests\\Route.cs",
+              "RelativeDocumentMoniker": "Models\\Requests\\Route.cs",
+              "ToolTip": "C:\\Users\\chaung\\Desktop\\New folder\\MapIntegration\\Models\\Requests\\Route.cs",
+              "RelativeToolTip": "Models\\Requests\\Route.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T09:59:58.203Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RouteController.cs",
+              "DocumentMoniker": "C:\\Users\\chaung\\Desktop\\New folder\\MapIntegration\\Controllers\\RouteController.cs",
+              "RelativeDocumentMoniker": "Controllers\\RouteController.cs",
+              "ToolTip": "C:\\Users\\chaung\\Desktop\\New folder\\MapIntegration\\Controllers\\RouteController.cs",
+              "RelativeToolTip": "Controllers\\RouteController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABwAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T09:57:20.86Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

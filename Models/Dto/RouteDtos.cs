@@ -16,15 +16,15 @@ public class InstructionDto
 {
     public string Kind { get; set; } = string.Empty;
     public string Text { get; set; } = string.Empty;
-    public int AtIndex { get; set; }
-    public double DistancePx { get; set; }
+    public int at_index { get; set; }
+    public double distance_px { get; set; }
 }
 
 public class RouteResponse
 {
-    public IList<int> PathNodeIds { get; set; } = new List<int>();
+    public IList<int> path_node_ids { get; set; } = new List<int>();
     public IList<IList<double>> Polyline { get; set; } = new List<IList<double>>();
-    public double LengthPx { get; set; }
+    public double length_px { get; set; }
     public IList<InstructionDto> Instructions { get; set; } = new List<InstructionDto>();
 }
 

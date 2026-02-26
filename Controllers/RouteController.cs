@@ -18,13 +18,13 @@ public class RouteController : ControllerBase
     [HttpPost]
     public async Task<ActionResult<RouteResponse>> Route(RouteRequest req)
     {
-        if (req.StartId == null || req.EndId == null)
+        if (req.start_id == null || req.end_id == null)
             return BadRequest("Missing start or end");
 
         var result = await _service.ComputeRouteAsync(
-            req.MapId,
-            req.StartId.Value,
-            req.EndId.Value);
+            req.map_id,
+            req.start_id.Value,
+            req.end_id.Value);
 
         return Ok(result);
     }

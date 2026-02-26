@@ -149,7 +149,7 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "mapId",
+        "Name": "map_id",
         "Type": "System.Int32",
         "IsRequired": false
       },
@@ -325,7 +325,7 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "mapId",
+        "Name": "map_id",
         "Type": "System.Int32",
         "IsRequired": false
       },

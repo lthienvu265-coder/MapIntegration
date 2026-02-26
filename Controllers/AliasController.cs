@@ -23,13 +23,13 @@
         [HttpPost]
         public async Task<ActionResult<AliasOut>> CreateAlias(AliasIn payload)
         {
-            var node = await _context.Nodes.FindAsync(payload.NodeId);
+            var node = await _context.Nodes.FindAsync(payload.Node_id);
             if (node == null)
                 return NotFound(new { detail = "Node không tồn tại." });
 
             var alias = new Alias
             {
-                NodeId = payload.NodeId,
+                NodeId = payload.Node_id,
                 Name = payload.Name,
                 NormName = TextUtils.NormalizeName(payload.Name),
                 Lang = payload.Lang,
@@ -43,7 +43,7 @@
             return new AliasOut
             {
                 Id = alias.Id,
-                NodeId = alias.NodeId,
+                Node_id = alias.NodeId,
                 Name = alias.Name,
                 NormName = alias.NormName,
                 Lang = alias.Lang,
@@ -66,7 +66,7 @@
             return items.Select(a => new AliasOut
             {
                 Id = a.Id,
-                NodeId = a.NodeId,
+                Node_id = a.NodeId,
                 Name = a.Name,
                 NormName = a.NormName,
                 Lang = a.Lang,

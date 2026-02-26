@@ -51,9 +51,9 @@ public class RouteService
 
         return new RouteResponse
         {
-            PathNodeIds = path,
+            path_node_ids = path,
             Polyline = mergedPolyline,
-            LengthPx = length,
+            length_px = length,
             Instructions = instructions
         };
     }
@@ -196,14 +196,23 @@ public class RouteService
         {
             Kind = "start",
             Text = $"Bắt đầu tại {startName}",
-            AtIndex = 0
+            at_index = 0,
+            distance_px = 0
         });
 
         if (poly.Count < 2)
             return list;
 
+        double accumulated = 0;
+        int lastIndex = 0;
+
         for (int i = 1; i < poly.Count - 1; i++)
         {
+            // accumulate distance
+            double dx = poly[i][0] - poly[i - 1][0];
+            double dy = poly[i][1] - poly[i - 1][1];
+            accumulated += Math.Sqrt(dx * dx + dy * dy);
+
             var angle = SignedTurnAngle(
                 poly[i - 1],
                 poly[i],
@@ -218,8 +227,20 @@ public class RouteService
             {
                 Kind = kind,
                 Text = text,
-                AtIndex = i
+                at_index = i,
+                distance_px = accumulated
             });
+
+            accumulated = 0;
+            lastIndex = i;
+        }
+
+        // distance from last turn to destination
+        for (int i = lastIndex + 1; i < poly.Count; i++)
+        {
+            double dx = poly[i][0] - poly[i - 1][0];
+            double dy = poly[i][1] - poly[i - 1][1];
+            accumulated += Math.Sqrt(dx * dx + dy * dy);
         }
 
         var endName = await BestAlias(endId);
@@ -228,7 +249,8 @@ public class RouteService
         {
             Kind = "arrive",
             Text = $"Đã đến {endName}",
-            AtIndex = poly.Count - 1
+            at_index = poly.Count - 1,
+            distance_px = accumulated
         });
 
         return list;

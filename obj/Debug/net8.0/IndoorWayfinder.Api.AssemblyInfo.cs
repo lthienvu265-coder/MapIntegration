@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("IndoorWayfinder.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6f776e77d2a63fcb8455222aafbbf72d795609b5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b9331373391502a9c8c7f4430cf21fc6d13c42cc")]
 [assembly: System.Reflection.AssemblyProductAttribute("IndoorWayfinder.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("IndoorWayfinder.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -23,12 +23,12 @@
         [HttpPost]
         public async Task<ActionResult<EdgeOut>> CreateEdge(EdgeIn payload)
         {
-            var map = await _context.Maps.FindAsync(payload.MapId);
+            var map = await _context.Maps.FindAsync(payload.map_id);
             if (map == null)
                 return NotFound(new { detail = "Map không tồn tại." });
 
-            var start = await _context.Nodes.FindAsync(payload.StartNodeId);
-            var end = await _context.Nodes.FindAsync(payload.EndNodeId);
+            var start = await _context.Nodes.FindAsync(payload.start_node_id);
+            var end = await _context.Nodes.FindAsync(payload.end_node_id);
 
             if (start == null || end == null ||
                 start.MapId != map.Id || end.MapId != map.Id)
@@ -87,9 +87,9 @@
             return new EdgeOut
             {
                 Id = edge.Id,
-                MapId = edge.MapId,
-                StartNodeId = edge.StartNodeId,
-                EndNodeId = edge.EndNodeId,
+                map_id = edge.MapId,
+                start_node_id = edge.StartNodeId,
+                end_node_id = edge.EndNodeId,
                 Floor = edge.Floor,
                 Polyline = poly,
                 Weight = edge.Weight,
@@ -101,10 +101,10 @@
         // LIST
         [HttpGet]
         public async Task<ActionResult<List<EdgeOut>>> ListEdges(
-            [FromQuery] int mapId,
+            [FromQuery] int map_id,
             [FromQuery] int? floor)
         {
-            var query = _context.Edges.Where(e => e.MapId == mapId);
+            var query = _context.Edges.Where(e => e.MapId == map_id);
 
             if (floor.HasValue)
                 query = query.Where(e => e.Floor == floor.Value);
@@ -114,9 +114,9 @@
             return edges.Select(edge => new EdgeOut
             {
                 Id = edge.Id,
-                MapId = edge.MapId,
-                StartNodeId = edge.StartNodeId,
-                EndNodeId = edge.EndNodeId,
+                map_id = edge.MapId,
+                start_node_id = edge.StartNodeId,
+                end_node_id = edge.EndNodeId,
                 Floor = edge.Floor,
                 Polyline = JsonSerializer.Deserialize<List<List<double>>>(edge.Polyline)!,
                 Weight = edge.Weight,
@@ -163,9 +163,9 @@
             return new EdgeOut
             {
                 Id = edge.Id,
-                MapId = edge.MapId,
-                StartNodeId = edge.StartNodeId,
-                EndNodeId = edge.EndNodeId,
+                map_id = edge.MapId,
+                start_node_id = edge.StartNodeId,
+                end_node_id = edge.EndNodeId,
                 Floor = edge.Floor,
                 Polyline = JsonSerializer.Deserialize<List<List<double>>>(edge.Polyline)!,
                 Weight = edge.Weight,

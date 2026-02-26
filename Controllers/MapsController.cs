@@ -23,9 +23,8 @@ public class MapsController : ControllerBase
         _env = env;
     }
 
-    // CREATE MAP (Upload)
     [HttpPost]
-    [RequestSizeLimit(20_000_000)] // 20MB limit
+    [RequestSizeLimit(20_000_000)]
     public async Task<IActionResult> CreateMap(
         [FromForm] string name,
         [FromForm] IFormFile file)
@@ -35,11 +34,11 @@ public class MapsController : ControllerBase
 
         var allowedTypes = new[]
         {
-            "image/png",
-            "image/jpeg",
-            "image/jpg",
-            "image/webp"
-        };
+        "image/png",
+        "image/jpeg",
+        "image/jpg",
+        "image/webp"
+    };
 
         if (!allowedTypes.Contains(file.ContentType))
             return BadRequest(new { detail = "File phải là ảnh (png/jpg/webp)." });
@@ -55,15 +54,12 @@ public class MapsController : ControllerBase
         var filename = $"map_{ts}{ext}";
         var diskPath = Path.Combine(uploadPath, filename);
 
-        // Save file
         await using (var stream = new FileStream(diskPath, FileMode.Create))
         {
             await file.CopyToAsync(stream);
         }
 
         int width, height;
-
-        // Read image size
         try
         {
             using var image = await SixLabors.ImageSharp.Image.LoadAsync(diskPath);
@@ -79,7 +75,7 @@ public class MapsController : ControllerBase
         var map = new Map
         {
             Name = name,
-            ImagePath = diskPath,
+            ImagePath = $"static/uploads/{filename}", // ✅ FIX HERE
             Width = width,
             Height = height,
             CreatedAt = DateTime.UtcNow
@@ -93,7 +89,7 @@ public class MapsController : ControllerBase
             id = map.Id,
             name = map.Name,
             image_path = map.ImagePath,
-            image_url = $"{BaseStatic}/{filename}",
+            image_url = $"{BaseStatic}/static/uploads/{filename}", // ✅ PUBLIC URL
             width = map.Width,
             height = map.Height,
             created_at = map.CreatedAt.ToString("o", CultureInfo.InvariantCulture)
