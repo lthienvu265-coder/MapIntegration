@@ -133,27 +133,30 @@ public class RouteService
     // POLYLINE
     // =============================
     private List<List<double>> MergePathPolyline(
-        List<int> path,
-        List<Edge> edges)
+     List<int> path,
+     List<Edge> edges)
     {
         var result = new List<List<double>>();
 
         for (int i = 1; i < path.Count; i++)
         {
-            var u = path[i - 1];
-            var v = path[i];
+            int from = path[i - 1];
+            int to = path[i];
 
             var edge = edges.FirstOrDefault(e =>
-                (e.StartNodeId == u && e.EndNodeId == v) ||
-                (e.Bidirectional && e.StartNodeId == v && e.EndNodeId == u));
+                (e.StartNodeId == from && e.EndNodeId == to) ||
+                (e.Bidirectional && e.StartNodeId == to && e.EndNodeId == from));
 
-            if (edge == null || edge.Polyline == null)
-                throw new Exception("Missing polyline");
+            if (edge == null)
+                throw new Exception($"Missing edge {from} → {to}");
 
-            var poly = JsonSerializer.Deserialize<List<List<double>>>(edge.Polyline!);
+            var poly = JsonSerializer.Deserialize<List<List<double>>>(edge.Polyline!)
+                       ?? throw new Exception("Invalid polyline JSON");
 
-            if (poly == null || poly.Count == 0)
-                throw new Exception("Invalid polyline format");
+            // 🔥 THIS IS THE FIX
+            bool reverse = edge.StartNodeId == to && edge.EndNodeId == from;
+            if (reverse)
+                poly.Reverse();
 
             if (result.Count == 0)
                 result.AddRange(poly);
